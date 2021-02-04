@@ -6,6 +6,13 @@ interface Greetable extends Aged {
     greet(phrase: string): void;
 }
 
+interface AddFun {
+    (n1: number, n2: number): number;
+}
+let add: AddFun;
+add = (n1: number, n2: number) => {
+    return n1 + n2;
+}
 
 class Person implements Greetable {
     name: string;
