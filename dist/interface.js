@@ -5,7 +5,7 @@ class Person {
         this.age = age;
     }
     greet(phrase) {
-        console.log(phrase + ' ' + this.name);
+        console.log(phrase + ' ' + this.name + ' age is ' + this.age);
     }
 }
 let user1;

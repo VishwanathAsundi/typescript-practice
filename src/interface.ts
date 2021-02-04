@@ -1,8 +1,11 @@
-interface Greetable {
-    name: string;
+interface Aged {
     age: number;
+}
+interface Greetable extends Aged {
+    readonly name: string;
     greet(phrase: string): void;
 }
+
 
 class Person implements Greetable {
     name: string;
@@ -12,7 +15,7 @@ class Person implements Greetable {
         this.age = age;
     }
     greet(phrase: string) {
-        console.log(phrase + ' ' + this.name);
+        console.log(phrase + ' ' + this.name + ' age is ' + this.age);
     }
 
 }
