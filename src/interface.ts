@@ -1,5 +1,5 @@
 interface Aged {
-    age: number;
+    age?: number; //Age is option property 
 }
 interface Greetable extends Aged {
     readonly name: string;
@@ -14,15 +14,23 @@ add = (n1: number, n2: number) => {
     return n1 + n2;
 }
 
+
+
 class Person implements Greetable {
     name: string;
-    age: number;
-    constructor(n: string, age: number) {
+    age?: number;
+    constructor(n: string, age?: number) {
         this.name = n;
-        this.age = age;
+        if (age) {
+            this.age = age;
+        }
     }
     greet(phrase: string) {
-        console.log(phrase + ' ' + this.name + ' age is ' + this.age);
+        if (this.age) {
+            console.log(phrase + ' ' + this.name + ' age is ' + this.age);
+        } else {
+            console.log('Hi!');
+        }
     }
 
 }

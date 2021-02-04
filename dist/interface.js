@@ -6,10 +6,17 @@ add = (n1, n2) => {
 class Person {
     constructor(n, age) {
         this.name = n;
-        this.age = age;
+        if (age) {
+            this.age = age;
+        }
     }
     greet(phrase) {
-        console.log(phrase + ' ' + this.name + ' age is ' + this.age);
+        if (this.age) {
+            console.log(phrase + ' ' + this.name + ' age is ' + this.age);
+        }
+        else {
+            console.log('Hi!');
+        }
     }
 }
 let user1;
